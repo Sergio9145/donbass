@@ -1,0 +1,48 @@
+
+<!doctype html>
+<html lang="en" ng-app>
+  <head>
+    <title>Russian-Ukrainian conflict in Donbass 2014-2015</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
+    <script src="js/jquery.min.js"></script>
+    <style type="text/css">
+      body {
+        background-color: white;
+        width: 800px;
+        margin:auto;
+      }
+  
+      a {
+        text-decoration:none;
+      }
+    </style>
+  </head>
+
+  <body onload="onload();">
+    <div id="content" align="center">
+      <div id="picture">
+        Picture
+      </div>
+      <div id="description">
+        Description
+      </div>
+      <div id="control">
+        <input id="test" type="range" min="0" max="500" value="0" onChange="range()"/>
+        <p></p>
+      </div>
+    </div>
+    
+  <script>
+  /* global $ */
+  function onload() {
+    $('#description').html('');
+    $("#description").load("intro.html");
+  }
+  function range() {
+    $('#description').html('Description');
+  }
+  </script>
+  </body>
+</html>
