@@ -11,72 +11,72 @@
       body {
         background-color: white;
         width: 700px;
-        margin:auto;
+        margin: auto;
       }
       a {
-        text-decoration:none;
+        text-decoration: none;
+      }
+      div {
+        padding: 0px 0px 10px 0px;
       }
     </style>
   </head>
 
-  <body>
+  <body onload="intro();">
     <div id="content" align="center">
-      <div id="picture"><img src="img/intro.jpg" /></div>
-      <div id="description"><p style="text-align:justify;">After Euromaidan protests and the fall of Ukrainian president Viktor Yanukovych, Russian soldiers without insignias took control of strategic positions and infrastructure within the Ukrainian territory of Crimea. Russia annexed Crimea after a disputed referendum in which according to official results Crimeans voted to join the Russian Federation. Subsequently, demonstrations by pro-Russian groups in the Donbass area of Ukraine escalated into an armed conflict between the Ukrainian government and the Russia-backed separatist forces of the self-declared Donetsk and Lugansk People's Republics.</p></div>
-      <div id='startBtn'><button onclick='knowMore();'>Know More</button></div>
     </div>
 
     <script>
       /* global $ */
       var events = [
-        ['10.09', 'img/10-09_eng.jpg', 'First descr'],
-        ['17.08', 'img/17-08_eng.jpg', 'Second descr'],
-        ['10.09', 'img/10-09_eng.jpg', 'First descr'],
-        ['17.08', 'img/17-08_eng.jpg', 'Second descr'],
-        ['10.09', 'img/10-09_eng.jpg', 'First descr'],
-        ['17.08', 'img/17-08_eng.jpg', 'Second descr'],
+        ['2014.04.13', 'img/2014.04.13.jpg', 'On April 13, the Ukrainian authorities officially announced the start of anti-terroristic operation on the Donbass.'],
+        ['2014.04.24', 'img/2014.04.24.jpg', 'On April 24, the first assault on occupied by separatists Slovyansk began in order to retake the city.'],
+        ['2014.05.22', 'img/2014.05.22.jpg', 'Eighteen soldiers were killed during an insurgent attack upon an army checkpoint near the city of Volnovakha, on 22 May.[129] Three armoured personnel carriers and several lorries were destroyed in the attack, whilst one insurgent was killed.[130] On the same day, a convoy consisting of one-hundred soldiers attempted to cross a bridge at Rubizhne, near Luhansk, and advance into insurgent-held territory.[131] They were ambushed by a group of between 300 and 500 insurgents. After fighting that lasted throughout the day, the soldiers were forced to retreat. Between two and fourteen soldiers, and seven and twenty insurgents were killed during the fighting. Three army infantry combat vehicles and one lorry were destroyed, and another three armoured vehicles were captured by the insurgents.[131][132] The Internal Affairs Ministry stated that some insurgents had attempted to enter Luhansk Oblast from Russia, but had been repelled by border guards.'],
+        ['2014.05.26', 'img/2014.05.26.jpg', 'During the morning of 26 May, pro-Russian separatist insurgents captured the terminal buildings of Donetsk International Airport, and demanded the withdrawal of government forces from the area.[11][7] The militants also blocked off the road to the airport. Soon after, the National Guard of Ukraine issued an ultimatum to the insurgents, which said that they should surrender immediately. This was rejected, causing paratroopers to launch an assault on the airport, accompanied by airstrikes against insurgent positions.[12][13] Attack helicopters were also used to target insurgent anti-aircraft guns.[14] Lorries with separatist reinforcements were seen heading towards the airport.[15] As evening fell, government forces pushed out the insurgents,[16] who then launched a counterattack that was repelled by government forces.[17] Sporadic gunfire was heard during the night, making it unclear if government soldiers were in full control of the airport.[16]'],
+        ['2014.06.13', 'img/2014.06.13.jpg', 'On the morning of 13 June 2014, heavy fighting resumed as part of military operations in Mariupol where the Azov and Dnipro-1 Battalions retook the city and key buildings occupied by insurgents killing five militants and destroying an insurgent BRDM-2 armoured vehicle.[17][46][47] Two soldiers were also killed[8] and 4–11 separatists were captured.[15][16] A military armoured personnel carrier was destroyed during the fighting.[12] Internal Affairs minister Avakov said "All key terrorist strongholds are being brought under control".[48] As a result of the six-hour battle, Ukrainian forces hoisted the national flag over the insurgent headquarters in the city and said they regained a 121-kilometre (75 mi) stretch of the border with Russia.[48][49] Immediately following the operation, Ukrainian president Petro Poroshenko instructed the chief of the Donetsk regional state administration Serhiy Taruta to temporarily move the regional capital to Mariupol.[48]'],
+        ['2014.06.14', 'img/2014.06.14.jpg', 'On 14 June 2014, an Ilyushin Il-76MD of the Ukrainian Air Force was shot down by forces of the self-proclaimed Lugansk People\'s Republic during the Ukrainian anti-insurgent operation against the unrecognized Lugansk People\'s Republic and Donetsk People\'s Republic, in its eastern Luhansk and Donetsk oblasts. The aircraft was on approach to land at Luhansk International Airport, and was carrying troops and equipment from an undisclosed location. All 49 people on board died.']
       ];
 
       function onBack() {
-        // if ($('input[name=slider]').val() > $('input[name=slider]').min)
-        //   $("#slider").slider('value',$('input[name=slider]').val() - 1);
-        //   $("#slider").trigger('change');
+        if (document.getElementById("slider").value > 0)
+        {
+          document.getElementById("slider").value--;
+          setViewTo(document.getElementById("slider").value);
+        }
+        else
+          intro();
       }
 
       function onForth() {
-        // if ($('input[name=slider]').val() < $('input[name=slider]').max)
-        //   $("#slider").slider('value',$('input[name=slider]').val() + 1);
-        //   $("#slider").trigger('change');
+        if (document.getElementById("slider").value < 5)
+        {
+          document.getElementById("slider").value++;
+          setViewTo(document.getElementById("slider").value);
+        }
+        else
+          ending();
       }
 
-      var main =
-      '<div id="picture"><img src="' + events[0][1] + '" /></div>' +
-      '<div><p style="text-align:justify;" id="description">' + events[0][2] + '</p></div>' +
-      '<div id="control">' +
-          '<div style="float:left; width:10%;">' +
-              '<button type="button" class="btn btn-default" aria-label="Back" onclick="onBack()">' +
-                  '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>' +
-              'Back</button>' +
-          '</div>' +
-          '<div style="float:left; width:80%;"><input name="slider" style="width:500px;" type="range" min=0 max=5 value=0 step=1 onChange="range()"/></div>' +
-          '<div style="float:left; width:10%;">' +
-              '<button type="button" class="btn btn-default" aria-label="Forth" onclick="onForth()">' +
-                  '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>' +
-              'Forth</button>' +
-          '</div>' +
-      '</div>' +
-      '<div id="eventDate" style="clear:both;">' + events[0][0] + '</div>';
-
-      function knowMore() {
-        $('#content').html(main);
+      function intro() {
+        $('#content').load('intro.html');
       }
       
-      function range() {
-        var value = $('input[name=slider]').val();
+      function ending() {
+        $('#content').load('ending.html');
+      }
+      
+      function knowMore() {
+        $('#content').load('main.html', function() {setViewTo(0);} );
+      }
+      
+      function setViewTo(position) {
+        $('#eventDate').html(events[position][0]);
+        $('#picture').html('<img src="' + events[position][1] + '" />');
+        $('#description').html(events[position][2]);
+      }
 
-        $('#eventDate').html(events[value][0]);
-        $('#picture').html('<img src="' + events[value][1] + '" />');
-        $('#description').html(events[value][2]);
+      function range() {
+        setViewTo(document.getElementById("slider").value);
       }
     </script>
   </body>

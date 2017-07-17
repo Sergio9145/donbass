@@ -1,24 +1,16 @@
-<script>
-    function onBack() {
-        
-    }
-    function onForth() {
-        
-    }
-</script>
-<div id="picture"><script>events[0][0]</script></div>
-<div id="description"><script>events[0][0]</script></div>
+<div id="picture"></div>
+<div><p style="text-align:justify;" id="description"></p></div>
 <div id="control">
-    <div style="float:left; width:10%;">
-        <button type="button" class="btn btn-default" aria-label="Back" onclick="onBack();">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        </button>
-    </div>
-    <div style="float:left; width:80%;"><input name="slider" style="width:500px;" type="range" min=0 max=5 value=0 step=1 onChange="range()"/></div>
-    <div style="float:left; width:10%;">
-        <button type="button" class="btn btn-default" aria-label="Forth" onclick="onForth();">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        </button>
-    </div>
+  <div style="float:left; width:10%;">
+      <button type="button" class="btn btn-default" aria-label="Back" onclick="onBack()">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true">Back</span>
+      </button>
+  </div>
+  <div style="float:left; width:80%;"><input id="slider" name="slider" style="width:500px;" type="range" min=0 max=5 value=0 step=1 onChange="range()"/></div>
+  <div style="float:left; width:10%;">
+      <button type="button" class="btn btn-default" aria-label="Forth" onclick="onForth()">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      Forth</button>
+  </div>
 </div>
 <div id="eventDate" style="clear:both;"></div>
