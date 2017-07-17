@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en" ng-app>
   <head>
@@ -22,26 +21,66 @@
 
   <body onload="onload();">
     <div id="content" align="center">
-      <div id="picture">
-        Picture
-      </div>
-      <div id="description">
-        Description
-      </div>
+      <div id="picture">      </div>
       <div id="control">
-        <input id="test" type="range" min="0" max="500" value="0" onChange="range()"/>
-        <p></p>
+        <div style="float:left; width:10%;">Previous</div>
+        <div style="float:left; width:80%;"><input name="slider" style="width:600px;" type="range" min=0 max=5 value=0 step=1 onChange="range()"/></div>
+        <div style="float:left; width:10%;">Next</div>
       </div>
+      <div id="eventDate" style="clear:both;">      </div>
+      <div id="description">      </div>
     </div>
     
   <script>
   /* global $ */
+  var events = [
+    ['10.09', 'img/10-09_eng.jpg', 'First descr'],
+    ['17.08', 'img/17-08_eng.jpg', 'Second descr'],
+    ['10.09', 'img/10-09_eng.jpg', 'First descr'],
+    ['17.08', 'img/17-08_eng.jpg', 'Second descr'],
+    ['10.09', 'img/10-09_eng.jpg', 'First descr'],
+    ['17.08', 'img/17-08_eng.jpg', 'Second descr'],
+  ];
+
   function onload() {
     $('#description').html('');
     $("#description").load("intro.html");
   }
+  
   function range() {
-    $('#description').html('Description');
+    switch ($('input[name=slider]').val())
+    {
+      case '0':
+        $('#eventDate').html(events[0][0]);
+        $('#picture').html('<img src="' + events[0][1] + '"/>');
+        $('#description').html('' + events[0][2]);
+        break;
+      case '1':
+        $('#eventDate').html(events[1][0]);
+        $('#picture').html('<img src="' + events[1][1] + '"/>');
+        $('#description').html('' + events[1][2]);
+        break;
+      case '2':
+        $('#eventDate').html(events[2][0]);
+        $('#picture').html('<img src="' + events[2][1] + '"/>');
+        $('#description').html('' + events[2][2]);
+        break;
+      case '3':
+        $('#eventDate').html(events[3][0]);
+        $('#picture').html('<img src="' + events[3][1] + '"/>');
+        $('#description').html('' + events[3][2]);
+        break;
+      case '4':
+        $('#eventDate').html(events[4][0]);
+        $('#picture').html('<img src="' + events[4][1] + '"/>');
+        $('#description').html('' + events[4][2]);
+        break;
+      case '5':
+        $('#eventDate').html(events[5][0]);
+        $('#picture').html('<img src="' + events[5][1] + '"/>');
+        $('#description').html('' + events[5][2]);
+        break;
+    }
   }
   </script>
   </body>
