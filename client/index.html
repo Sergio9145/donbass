@@ -29,12 +29,12 @@
     <script>
       /* global $ */
       var events = [
-        ['2014.04.13', 'img/2014.04.13.jpg', 'On April 13, the Ukrainian authorities officially announced the start of anti-terroristic operation on the Donbass.'],
-        ['2014.04.24', 'img/2014.04.24.jpg', 'On April 24, the first assault on occupied by separatists Slovyansk began in order to retake the city.'],
-        ['2014.05.22', 'img/2014.05.22.jpg', 'Eighteen soldiers were killed during an insurgent attack upon an army checkpoint near the city of Volnovakha, on 22 May.[129] Three armoured personnel carriers and several lorries were destroyed in the attack, whilst one insurgent was killed.[130] On the same day, a convoy consisting of one-hundred soldiers attempted to cross a bridge at Rubizhne, near Luhansk, and advance into insurgent-held territory.[131] They were ambushed by a group of between 300 and 500 insurgents. After fighting that lasted throughout the day, the soldiers were forced to retreat. Between two and fourteen soldiers, and seven and twenty insurgents were killed during the fighting. Three army infantry combat vehicles and one lorry were destroyed, and another three armoured vehicles were captured by the insurgents.[131][132] The Internal Affairs Ministry stated that some insurgents had attempted to enter Luhansk Oblast from Russia, but had been repelled by border guards.'],
-        ['2014.05.26', 'img/2014.05.26.jpg', 'During the morning of 26 May, pro-Russian separatist insurgents captured the terminal buildings of Donetsk International Airport, and demanded the withdrawal of government forces from the area.[11][7] The militants also blocked off the road to the airport. Soon after, the National Guard of Ukraine issued an ultimatum to the insurgents, which said that they should surrender immediately. This was rejected, causing paratroopers to launch an assault on the airport, accompanied by airstrikes against insurgent positions.[12][13] Attack helicopters were also used to target insurgent anti-aircraft guns.[14] Lorries with separatist reinforcements were seen heading towards the airport.[15] As evening fell, government forces pushed out the insurgents,[16] who then launched a counterattack that was repelled by government forces.[17] Sporadic gunfire was heard during the night, making it unclear if government soldiers were in full control of the airport.[16]'],
-        ['2014.06.13', 'img/2014.06.13.jpg', 'On the morning of 13 June 2014, heavy fighting resumed as part of military operations in Mariupol where the Azov and Dnipro-1 Battalions retook the city and key buildings occupied by insurgents killing five militants and destroying an insurgent BRDM-2 armoured vehicle.[17][46][47] Two soldiers were also killed[8] and 4–11 separatists were captured.[15][16] A military armoured personnel carrier was destroyed during the fighting.[12] Internal Affairs minister Avakov said "All key terrorist strongholds are being brought under control".[48] As a result of the six-hour battle, Ukrainian forces hoisted the national flag over the insurgent headquarters in the city and said they regained a 121-kilometre (75 mi) stretch of the border with Russia.[48][49] Immediately following the operation, Ukrainian president Petro Poroshenko instructed the chief of the Donetsk regional state administration Serhiy Taruta to temporarily move the regional capital to Mariupol.[48]'],
-        ['2014.06.14', 'img/2014.06.14.jpg', 'On 14 June 2014, an Ilyushin Il-76MD of the Ukrainian Air Force was shot down by forces of the self-proclaimed Lugansk People\'s Republic during the Ukrainian anti-insurgent operation against the unrecognized Lugansk People\'s Republic and Donetsk People\'s Republic, in its eastern Luhansk and Donetsk oblasts. The aircraft was on approach to land at Luhansk International Airport, and was carrying troops and equipment from an undisclosed location. All 49 people on board died.']
+        ['2014.04.13', 'img/2014.04.13.jpg', 'txt/2014.04.13.html'],
+        ['2014.04.24', 'img/2014.04.24.jpg', 'txt/2014.04.24.html'],
+        ['2014.05.22', 'img/2014.05.22.jpg', 'txt/2014.05.22.html'],
+        ['2014.05.26', 'img/2014.05.26.jpg', 'txt/2014.05.26.html'],
+        ['2014.06.13', 'img/2014.06.13.jpg', 'txt/2014.06.13.html'],
+        ['2014.06.14', 'img/2014.06.14.jpg', 'txt/2014.06.14.html']
       ];
 
       function onBack() {
@@ -70,14 +70,27 @@
       }
       
       function setViewTo(position) {
+        const delay = 400;
+        
+        $('#picture, #description, #control, #eventDate').hide();
+        
         $('#eventDate').html(events[position][0]);
         $('#picture').html('<img src="' + events[position][1] + '" />');
-        $('#description').html(events[position][2]);
+        $('#description').load(events[position][2],
+          function() { $('#picture').fadeIn(delay,
+            function() { $('#description').fadeIn(delay,
+              function() { $('#control').fadeIn(delay,
+                function() { $('#eventDate').fadeIn(delay) }
+              )}
+            )}
+          )}
+        );
       }
 
       function range() {
         setViewTo(document.getElementById("slider").value);
       }
+      
     </script>
   </body>
 </html>
