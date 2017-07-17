@@ -9,21 +9,26 @@
     <script src="js/jquery.min.js"></script>
     <style type="text/css">
       body {
-        background-color: white;
-        width: 700px;
-        margin: auto;
+        background-image: url("img/bg.jpg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
       }
       a {
         text-decoration: none;
       }
       div {
-        padding: 0px 0px 10px 0px;
+        padding: 0px 0px 30px 0px;
+      }
+      #content {
+        background-color: white;
+        padding: 0px 60px;
       }
     </style>
   </head>
 
   <body onload="intro();">
-    <div id="content" align="center">
+    <div id="content" align="center" style="width: 800px; margin: auto;">
     </div>
 
     <script>
@@ -60,10 +65,12 @@
       }
 
       function intro() {
+        // $('body').css('background-image', 'url("img/intro.jpg")');
         $('#content').load('intro.html');
       }
       
       function ending() {
+        // $('body').css('background-image', 'url("img/ending.jpg")');
         $('#content').load('ending.html');
       }
       
@@ -72,6 +79,8 @@
       }
       
       function setViewTo(position) {
+        // $('body').css('background-image', 'url(' + events[position][1] + ')');
+        
         $('#picture, #description, #control, #eventDate').hide();
         
         $('#eventDate').html(events[position][0]);
