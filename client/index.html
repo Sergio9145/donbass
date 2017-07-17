@@ -5,83 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <script src="js/jquery.min.js"></script>
     <style type="text/css">
       body {
         background-color: white;
-        width: 800px;
+        width: 700px;
         margin:auto;
       }
-  
       a {
         text-decoration:none;
       }
     </style>
   </head>
 
-  <body onload="onload();">
+  <body>
     <div id="content" align="center">
-      <div id="picture">      </div>
-      <div id="control">
-        <div style="float:left; width:10%;">Previous</div>
-        <div style="float:left; width:80%;"><input name="slider" style="width:600px;" type="range" min=0 max=5 value=0 step=1 onChange="range()"/></div>
-        <div style="float:left; width:10%;">Next</div>
-      </div>
-      <div id="eventDate" style="clear:both;">      </div>
-      <div id="description">      </div>
+      <div id="picture"><img src="img/intro.jpg" /></div>
+      <div id="description"><p style="text-align:justify;">After Euromaidan protests and the fall of Ukrainian president Viktor Yanukovych, Russian soldiers without insignias took control of strategic positions and infrastructure within the Ukrainian territory of Crimea. Russia annexed Crimea after a disputed referendum in which according to official results Crimeans voted to join the Russian Federation. Subsequently, demonstrations by pro-Russian groups in the Donbass area of Ukraine escalated into an armed conflict between the Ukrainian government and the Russia-backed separatist forces of the self-declared Donetsk and Lugansk People's Republics.</p></div>
+      <div id='startBtn'><button onclick='knowMore();'>Know More</button></div>
     </div>
-    
-  <script>
-  /* global $ */
-  var events = [
-    ['10.09', 'img/10-09_eng.jpg', 'First descr'],
-    ['17.08', 'img/17-08_eng.jpg', 'Second descr'],
-    ['10.09', 'img/10-09_eng.jpg', 'First descr'],
-    ['17.08', 'img/17-08_eng.jpg', 'Second descr'],
-    ['10.09', 'img/10-09_eng.jpg', 'First descr'],
-    ['17.08', 'img/17-08_eng.jpg', 'Second descr'],
-  ];
 
-  function onload() {
-    $('#description').html('');
-    $("#description").load("intro.html");
-  }
-  
-  function range() {
-    switch ($('input[name=slider]').val())
-    {
-      case '0':
-        $('#eventDate').html(events[0][0]);
-        $('#picture').html('<img src="' + events[0][1] + '"/>');
-        $('#description').html('' + events[0][2]);
-        break;
-      case '1':
-        $('#eventDate').html(events[1][0]);
-        $('#picture').html('<img src="' + events[1][1] + '"/>');
-        $('#description').html('' + events[1][2]);
-        break;
-      case '2':
-        $('#eventDate').html(events[2][0]);
-        $('#picture').html('<img src="' + events[2][1] + '"/>');
-        $('#description').html('' + events[2][2]);
-        break;
-      case '3':
-        $('#eventDate').html(events[3][0]);
-        $('#picture').html('<img src="' + events[3][1] + '"/>');
-        $('#description').html('' + events[3][2]);
-        break;
-      case '4':
-        $('#eventDate').html(events[4][0]);
-        $('#picture').html('<img src="' + events[4][1] + '"/>');
-        $('#description').html('' + events[4][2]);
-        break;
-      case '5':
-        $('#eventDate').html(events[5][0]);
-        $('#picture').html('<img src="' + events[5][1] + '"/>');
-        $('#description').html('' + events[5][2]);
-        break;
-    }
-  }
-  </script>
+    <script>
+      /* global $ */
+      var events = [
+        ['10.09', 'img/10-09_eng.jpg', 'First descr'],
+        ['17.08', 'img/17-08_eng.jpg', 'Second descr'],
+        ['10.09', 'img/10-09_eng.jpg', 'First descr'],
+        ['17.08', 'img/17-08_eng.jpg', 'Second descr'],
+        ['10.09', 'img/10-09_eng.jpg', 'First descr'],
+        ['17.08', 'img/17-08_eng.jpg', 'Second descr'],
+      ];
+
+      function onBack() {
+        // if ($('input[name=slider]').val() > $('input[name=slider]').min)
+        //   $("#slider").slider('value',$('input[name=slider]').val() - 1);
+        //   $("#slider").trigger('change');
+      }
+
+      function onForth() {
+        // if ($('input[name=slider]').val() < $('input[name=slider]').max)
+        //   $("#slider").slider('value',$('input[name=slider]').val() + 1);
+        //   $("#slider").trigger('change');
+      }
+
+      var main =
+      '<div id="picture"><img src="' + events[0][1] + '" /></div>' +
+      '<div><p style="text-align:justify;" id="description">' + events[0][2] + '</p></div>' +
+      '<div id="control">' +
+          '<div style="float:left; width:10%;">' +
+              '<button type="button" class="btn btn-default" aria-label="Back" onclick="onBack()">' +
+                  '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>' +
+              'Back</button>' +
+          '</div>' +
+          '<div style="float:left; width:80%;"><input name="slider" style="width:500px;" type="range" min=0 max=5 value=0 step=1 onChange="range()"/></div>' +
+          '<div style="float:left; width:10%;">' +
+              '<button type="button" class="btn btn-default" aria-label="Forth" onclick="onForth()">' +
+                  '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>' +
+              'Forth</button>' +
+          '</div>' +
+      '</div>' +
+      '<div id="eventDate" style="clear:both;">' + events[0][0] + '</div>';
+
+      function knowMore() {
+        $('#content').html(main);
+      }
+      
+      function range() {
+        var value = $('input[name=slider]').val();
+
+        $('#eventDate').html(events[value][0]);
+        $('#picture').html('<img src="' + events[value][1] + '" />');
+        $('#description').html(events[value][2]);
+      }
+    </script>
   </body>
 </html>
