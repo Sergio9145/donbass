@@ -7,24 +7,8 @@
     <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <script src="js/jquery.min.js"></script>
-    <style type="text/css">
-      body {
-        background-image: url("img/bg.jpg");
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-      }
-      a {
-        text-decoration: none;
-      }
-      div {
-        padding: 0px 0px 30px 0px;
-      }
-      #content {
-        background-color: white;
-        padding: 0px 60px;
-      }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
+
   </head>
 
   <body onload="intro();">
@@ -54,7 +38,7 @@
           intro();
       }
 
-      function onForth() {
+      function onNext() {
         if (document.getElementById("slider").value < 5)
         {
           document.getElementById("slider").value++;
@@ -65,31 +49,27 @@
       }
 
       function intro() {
-        // $('body').css('background-image', 'url("img/intro.jpg")');
         $('#content').load('intro.html');
       }
       
       function ending() {
-        // $('body').css('background-image', 'url("img/ending.jpg")');
         $('#content').load('ending.html');
       }
       
-      function knowMore() {
+      function learnMore() {
         $('#content').load('main.html', function() {setViewTo(0);} );
       }
       
       function setViewTo(position) {
-        // $('body').css('background-image', 'url(' + events[position][1] + ')');
-        
-        $('#picture, #description, #control, #eventDate').hide();
+        $('#picture, #eventDate, #description, #control').hide();
         
         $('#eventDate').html(events[position][0]);
         $('#picture').html('<img src="' + events[position][1] + '" />');
         $('#description').load(events[position][2],
           function() { $('#picture').fadeIn(fadeInDelay,
-            function() { $('#description').fadeIn(fadeInDelay,
-              function() { $('#control').fadeIn(fadeInDelay,
-                function() { $('#eventDate').fadeIn(fadeInDelay);}
+            function() { $('#eventDate').fadeIn(fadeInDelay,
+              function() { $('#description').fadeIn(fadeInDelay,
+                function() { $('#control').fadeIn(fadeInDelay);}
               );}
             );}
           );}

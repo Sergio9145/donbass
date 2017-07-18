@@ -1,17 +1,12 @@
-<div></div>
 <div id="picture"></div>
+<div><h3 id="eventDate"></h3></div>
 <div><p style="text-align:justify;" id="description"></p></div>
 <div id="control">
   <div style="float:left; width:10%;">
-      <button type="button" class="btn btn-default" aria-label="Back" onclick="onBack()">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true">Back</span>
-      </button>
+      <button type="button" class="btn btn-default" aria-label="Back" onclick="onBack()">Back</button>
   </div>
-  <div style="float:left; width:80%;"><input id="slider" name="slider" style="width:500px;" type="range" min=0 max=5 value=0 step=1 onChange="range()"/></div>
+  <div style="float:left; width:80%; line-height: 40px;"><input id="slider" style="width:500px;" type="range" min=0 max=5 value=0 step=1 onChange="range()"/></div>
   <div style="float:left; width:10%;">
-      <button type="button" class="btn btn-default" aria-label="Forth" onclick="onForth()">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true">Forth</span>
-      </button>
+      <button type="button" class="btn btn-default" aria-label="Next" onclick="onNext()">Next</button>
   </div>
 </div>
-<div style="clear:both;"><h5 id="eventDate"></h5></div>

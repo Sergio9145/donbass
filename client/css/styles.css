@@ -1,0 +1,36 @@
+body {
+    background-image: url("../img/bg.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+a {
+    text-decoration: none;
+}
+
+div #picture {
+    padding: 30px 0px 15px 0px;
+}
+
+div #startBtn, #restartBtn {
+    padding: 0px 0px 30px 0px;
+}
+
+div #control {
+    padding: 20px 0px 60px 0px;
+}
+
+div .video {
+    margin: 8px 0px 8px 0px;
+}
+
+button .btn, .btn-default {
+    line-height: 40px;
+    padding: 0px 30px;
+}
+
+#content {
+    background-color: white;
+    padding: 0px 60px;
+}
