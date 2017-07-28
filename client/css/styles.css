@@ -13,6 +13,10 @@ div #picture {
     padding: 30px 0px 15px 0px;
 }
 
+div #statHeader {
+    padding: 30px 0px 15px 0px;
+}
+
 div #startBtn, #restartBtn {
     padding: 0px 0px 30px 0px;
 }
@@ -34,4 +38,142 @@ button .btn, .btn-default {
     background-color: white;
     padding: 0px 60px;
     min-height: 100vh;
+    width: 700px;
+    margin: auto;
+}
+
+.button {
+  border-radius: 5px;
+  background-color: #0088cc;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 24px;
+  padding: 20px;
+  width: 250px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.button2 {
+  border-radius: 5px;
+  background-color: #0088cc;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 15px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.button2 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button2 span:after {
+  content: '\00ab';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: -20px;
+  transition: 0.5s;
+}
+
+.button2:hover span {
+  padding-left: 25px;
+}
+
+.button2:hover span:after {
+  opacity: 1;
+  left: 0;
+}
+
+.button3 {
+  border-radius: 5px;
+  background-color: #0088cc;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 15px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.button3 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button3 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button3:hover span {
+  padding-right: 25px;
+}
+
+.button3:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+#svg {
+  width: 500px;
+  height: 200px;
+}
+
+#leftBtn, #rightBtn{
+  float: left;
+  width: 100px;
+}
+
+#sliderDiv {
+   float: left;
+   min-width: 500px;
+   line-height: 50px;
+   height: 50px;
+}
+
+#slider {
+  width:400px;
 }

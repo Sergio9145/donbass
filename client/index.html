@@ -1,18 +1,19 @@
 <!doctype html>
 <html lang="en" ng-app>
   <head>
-    <title>Russian-Ukrainian conflict in Donbass 2014-2015</title>
+    <title>Russian-Ukrainian conflict in Donbass 2014-2017</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <script src="js/jquery.min.js"></script>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/d3.css">
 
   </head>
 
-  <body onload="intro();">
-    <div id="content" align="center" style="width: 800px; margin: auto;">
+  <body onload="stats();">
+    <div id="content" align="center">
     </div>
 
     <script>
@@ -35,7 +36,7 @@
           setViewTo(document.getElementById("slider").value);
         }
         else
-          intro();
+          stats();
       }
 
       function onNext() {
@@ -47,18 +48,31 @@
         else
           ending();
       }
+      
+      function onStatsBack() {
+          intro();
+      }
 
+      function onStatsNext() {
+          main();
+      }
+      
       function intro() {
         $('#content').load('intro.html');
+      }
+      
+      function stats() {
+        $('#content').load('stats.html');
+      }
+      
+      function main() {
+        $('#content').load('main.html', function() {setViewTo(0);} );
       }
       
       function ending() {
         $('#content').load('ending.html');
       }
-      
-      function learnMore() {
-        $('#content').load('main.html', function() {setViewTo(0);} );
-      }
+
       
       function setViewTo(position) {
         $('#picture, #eventDate, #description, #control').hide();

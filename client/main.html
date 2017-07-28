@@ -1,12 +1,13 @@
 <div id="picture"></div>
 <div><h3 id="eventDate"></h3></div>
 <div><p style="text-align:justify;" id="description"></p></div>
+
 <div id="control">
-  <div style="float:left; width:10%;">
-      <button type="button" class="btn btn-default" aria-label="Back" onclick="onBack()">Back</button>
+  <div id="leftBtn">
+      <button class="button2" onclick="onBack()"><span>Back</span></button>
   </div>
-  <div style="float:left; width:80%; line-height: 40px;"><input id="slider" style="width:500px;" type="range" min=0 max=5 value=0 step=1 onChange="range()"/></div>
-  <div style="float:left; width:10%;">
-      <button type="button" class="btn btn-default" aria-label="Next" onclick="onNext()">Next</button>
+  <div id="sliderDiv"><input id="slider" type="range" min=0 max=5 value=0 step=1 onChange="range()"/></div>
+  <div id="rightBtn">
+      <button class="button3" onclick="onNext()"><span>Next</span></button>
   </div>
 </div>
