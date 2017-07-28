@@ -1,9 +1,25 @@
-.bar {
+.bar1 {
   fill: #0088cc;
 }
 
-.bar:hover {
+.bar1:hover {
   fill: orange;
+}
+
+.bar2 {
+  fill: orange;
+}
+
+.bar2:hover {
+  fill: #0088cc;
+}
+
+.bar3 {
+  fill: olive;
+}
+
+.bar3:hover {
+  fill: brown;
 }
 
 .axis--x path {
