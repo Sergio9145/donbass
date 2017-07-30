@@ -2,9 +2,9 @@
 <script src="d3-tip.js"></script>
 <script src="d3.js"></script>
 
-<div class="statHeader1"><h3>Economical and political background</h3></div>
+<div class="statHeader1" id="header1"><h3>Economical and political background</h3></div>
 
-<div>
+<div id="chart1">
   <div style="float: left;">
     <div class="statHeader2"><h5>Military budget in 1998-2016, UAH</h5></div>
     <svg width="350" height="200" id="bar1"></svg>
@@ -15,10 +15,8 @@
   </div>
 </div>
 
-<div style="clear: both;">
-  <div class="statHeader1"><h4>Military budget to GPD in 1998-2016, %</h4></div>
-  <svg width="700" height="400" id="bar3"></svg>
-</div>
+<div class="statHeader1" id="header2" style="clear: both;"><h4>Military budget to GPD in 1998-2016, %</h4></div>
+<div id="chart2"><svg width="700" height="400" id="bar3"></svg></div>
 
 <div id="control">
   <div id="leftBtn">
@@ -29,3 +27,21 @@
       <button class="button3" onclick="onStatsNext()"><span>Next</span></button>
   </div>
 </div>
+
+<script>
+/* global $, fadeInDelay*/
+    $(function() {
+        $('#header2, #header1, #chart1, #chart2, #control').hide();
+        
+        $(function() { $('#header1').fadeIn(fadeInDelay,
+                function() { $('#chart1').fadeIn(fadeInDelay,
+                    function() { $('#header2').fadeIn(fadeInDelay,
+                        function() { $('#chart2').fadeIn(fadeInDelay,
+                            function() { $('#control').fadeIn(fadeInDelay);}
+                        );}
+                    );}
+                );}
+            );}
+        );
+    });
+</script>

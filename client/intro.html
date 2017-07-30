@@ -6,14 +6,16 @@
 <script>
 /* global $, fadeInDelay*/
     $(function() {
-        $('#picture, #description, #startBtn').hide();
+        $('#picture, #description, #eventDate, #startBtn').hide();
         
         $("#description").load("txt/begin.html",
             function() { $('#picture').fadeIn(fadeInDelay,
-              function() { $('#description').fadeIn(fadeInDelay,
-                function() { $('#startBtn').fadeIn(fadeInDelay);}
-              );}
+                function() { $('#eventDate').fadeIn(fadeInDelay,
+                    function() { $('#description').fadeIn(fadeInDelay,
+                        function() { $('#startBtn').fadeIn(fadeInDelay);}
+                    );}
+                );}
             );}
-        );
-    });
+        );}
+    )
 </script>

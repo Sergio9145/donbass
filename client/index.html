@@ -13,7 +13,7 @@
 
   </head>
 
-  <body onload="stats();">
+  <body onload="intro();">
     <div id="content" align="center">
     </div>
 
@@ -27,7 +27,11 @@
         ['2014.05.22', 'img/2014.05.22.jpg', 'txt/2014.05.22.html'],
         ['2014.05.26', 'img/2014.05.26.jpg', 'txt/2014.05.26.html'],
         ['2014.06.13', 'img/2014.06.13.jpg', 'txt/2014.06.13.html'],
-        ['2014.06.14', 'img/2014.06.14.jpg', 'txt/2014.06.14.html']
+        ['2014.06.14', 'img/2014.06.14.jpg', 'txt/2014.06.14.html'],
+        ['2014.07.17', 'img/2014.07.17.jpg', 'txt/2014.07.17.html'],
+        ['2014.08.28', 'img/2014.08.28.jpg', 'txt/2014.08.28.html'],
+        ['2015.01.22', 'img/2015.01.22.jpg', 'txt/2015.01.22.html'],
+        ['2015.02.18', 'img/2015.02.18.jpg', 'txt/2015.02.18.html']
       ];
 
       function onBack() {
@@ -41,7 +45,7 @@
       }
 
       function onNext() {
-        if (document.getElementById("slider").value < 5)
+        if (document.getElementById("slider").value < 9)
         {
           document.getElementById("slider").value++;
           setViewTo(document.getElementById("slider").value);
