@@ -1,12 +1,12 @@
 <div id="picture"><img src="img/intro.jpg" /></div>
-<div><h3 id="eventDate">2014.02.23</h3></div>
+<div><h2 id="eventDate">:2014.02.23.</h2></div>
 <div id="description" style="text-align:justify;"></div>
 <div id='startBtn'><button class="button" onclick='stats();'><span>Learn More</span></button></div>
 
 <script>
 /* global $, fadeInDelay*/
     $(function() {
-        $('#picture, #description, #eventDate, #startBtn').hide();
+        $('#picture, #eventDate, #description, #startBtn').hide();
         
         $("#description").load("txt/begin.html",
             function() { $('#picture').fadeIn(fadeInDelay,

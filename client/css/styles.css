@@ -3,30 +3,60 @@ body {
     background-size: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    font-family: 'Play', sans-serif;
+    font-size: 1.1em;
+    color: #191919;
 }
 
-a {
-    text-decoration: none;
+a, a:visited {
+  color: #C50404;
+  text-decoration: none;
+}
+
+a:hover{
+  color: red;
+}
+
+#content {
+    background-color: #F7F7F7;
+    padding: 10px 80px;
+    min-height: 100vh;
+    width: 800px;
+    margin: auto;
+}
+
+h2 {
+    padding: 15px 0px 15px 0px;
+    margin: 0px;
 }
 
 div #picture {
-    padding: 30px 0px 15px 0px;
+  padding: 30px 0px 0px 0px;
 }
 
-div .statHeader1 {
-    padding: 30px 0px 0px 0px;
-}
-
-div .statHeader2 {
-    padding: 20px 0px 10px 0px;
-}
-
-div #startBtn, #restartBtn {
-    padding: 0px 0px 30px 0px;
+img {
+  outline: 2px solid #F7F7F7;
+  outline-offset: -12px;
 }
 
 div #control {
-    padding: 20px 0px 60px 0px;
+    padding: 20px 0px 84px 0px;
+}
+
+#leftBtn, #sliderDiv, #rightBtn{
+  float: left;
+}
+
+#slider {
+  width: 480px;
+  /*for some reason needs to be -1px:*/ 
+  margin: 0px 29px;
+  line-height: 52px;
+  height: 52px;
+}
+
+div #startBtn, #restartBtn {
+    padding: 15px 0px 15px 0px;
 }
 
 div .video {
@@ -34,26 +64,18 @@ div .video {
 }
 
 button .btn, .btn-default {
-    line-height: 40px;
     padding: 0px 30px;
-}
-
-#content {
-    background-color: white;
-    padding: 0px 60px;
-    min-height: 100vh;
-    width: 700px;
-    margin: auto;
 }
 
 .button {
   border-radius: 5px;
-  background-color: #0088cc;
+  background-color: #C50404;
   border: none;
-  color: #FFFFFF;
+  color: #F7F7F7;
+  font-family: 'Play', sans-serif;
   text-align: center;
   font-size: 24px;
-  padding: 20px;
+  padding: 20px 20px 24px 20px;
   width: 250px;
   transition: all 0.5s;
   cursor: pointer;
@@ -68,12 +90,16 @@ button .btn, .btn-default {
 }
 
 .button span:after {
-  content: '\00bb';
+  content: '\00bb\00bb';
   position: absolute;
   opacity: 0;
   top: 0;
   right: -20px;
   transition: 0.5s;
+}
+
+.button:hover, .button2:hover, .button3:hover {
+  background-color: red;
 }
 
 .button:hover span {
@@ -87,13 +113,14 @@ button .btn, .btn-default {
 
 .button2 {
   border-radius: 5px;
-  background-color: #0088cc;
+  background-color: #C50404;
   border: none;
-  color: #FFFFFF;
+  color: #F7F7F7;
   text-align: center;
+  font-family: 'Play', sans-serif;
   font-size: 20px;
-  padding: 15px;
-  width: 100px;
+  padding: 16px 20px 18px 20px;
+  width: 130px;
   transition: all 0.5s;
   cursor: pointer;
 }
@@ -106,7 +133,7 @@ button .btn, .btn-default {
 }
 
 .button2 span:after {
-  content: '\00ab';
+  content: '\00ab\00ab';
   position: absolute;
   opacity: 0;
   top: 0;
@@ -125,13 +152,14 @@ button .btn, .btn-default {
 
 .button3 {
   border-radius: 5px;
-  background-color: #0088cc;
+  background-color: #C50404;
   border: none;
-  color: #FFFFFF;
+  color: #F7F7F7;
   text-align: center;
+  font-family: 'Play', sans-serif;
   font-size: 20px;
-  padding: 15px;
-  width: 100px;
+  padding: 16px 20px 18px 20px;
+  width: 130px;
   transition: all 0.5s;
   cursor: pointer;
 }
@@ -144,7 +172,7 @@ button .btn, .btn-default {
 }
 
 .button3 span:after {
-  content: '\00bb';
+  content: '\00bb\00bb';
   position: absolute;
   opacity: 0;
   top: 0;
@@ -159,20 +187,4 @@ button .btn, .btn-default {
 .button3:hover span:after {
   opacity: 1;
   right: 0;
-}
-
-#leftBtn, #rightBtn{
-  float: left;
-  width: 100px;
-}
-
-#sliderDiv {
-   float: left;
-   min-width: 500px;
-   line-height: 50px;
-   height: 50px;
-}
-
-#slider {
-  width:400px;
 }

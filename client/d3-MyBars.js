@@ -51,11 +51,15 @@ d3.tsv("budget.tsv", function(d) {
   y12.domain([0, d3.max(data, function(d) { return d.frequency; })]);
 
   g1.append("g")
+      .style("font", "12px Play")
+      .style("font-weight", "bold")
       .attr("class", "axis axis--x")
       .attr("transform", "translate(0," + height12 + ")")
       .call(d3.axisBottom(x12));
       
   g1.append("g")
+      .style("font", "12px Play")
+      .style("font-weight", "bold")
       .attr("class", "axis axis--y")
       .call(d3.axisLeft(y12));
       
@@ -81,11 +85,15 @@ d3.tsv("gdp.tsv", function(d) {
   y12.domain([0, d3.max(data, function(d) { return d.frequency; })]);
 
   g2.append("g")
+      .style("font", "12px Play")
+      .style("font-weight", "bold")
       .attr("class", "axis axis--x")
       .attr("transform", "translate(0," + height12 + ")")
       .call(d3.axisBottom(x12));
       
   g2.append("g")
+      .style("font", "12px Play")
+      .style("font-weight", "bold")
       .attr("class", "axis axis--y")
       .call(d3.axisLeft(y12));
       
@@ -111,11 +119,15 @@ d3.tsv("b2gdp.tsv", function(d) {
   y3.domain([0, d3.max(data, function(d) { return d.frequency; })]);
 
   g3.append("g")
+      .style("font", "18px Play")
+      .style("font-weight", "bold")
       .attr("class", "axis axis--x")
       .attr("transform", "translate(0," + height3 + ")")
       .call(d3.axisBottom(x3));
       
   g3.append("g")
+      .style("font", "14px Play")
+      .style("font-weight", "bold")
       .attr("class", "axis axis--y")
       .call(d3.axisLeft(y3));
       

@@ -1,29 +1,27 @@
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="d3-tip.js"></script>
-<script src="d3.js"></script>
-
-<div class="statHeader1" id="header1"><h3>Economical and political background</h3></div>
-
+<div class="statHeader1" id="header1"><h2>Economical and political background</h2></div>
+<p id="description" style="text-align:justify;">
+    Due to a major influence of pro-Russian agents in Ukrainian parliament the defense budget decreased over the years. Combined with the poor media control and weak state institutions in some parts of Ukraine this eventually have led to high level of unrest and social tension on the East and South of the country.
+</p>
 <div id="chart1">
-  <div style="float: left;">
-    <div class="statHeader2"><h5>Military budget in 1998-2016, UAH</h5></div>
-    <svg width="350" height="200" id="bar1"></svg>
+  <div style="float: left; width: 50%;">
+    <div class="statHeader2"><h3>Military budget</h3><h4>1998-2016, UAH</h4></div>
+    <svg width="400" height="250" id="bar1" style="border: 2px;"></svg>
   </div>
-  <div style="float: right;">
-    <div class="statHeader2"><h5>Gross domestic product in 1998-2016, UAH</h5></div>
-    <svg width="350" height="200" id="bar2"></svg>
+  <div style="float: right; width: 50%;">
+    <div class="statHeader2"><h3>Gross domestic product</h3><h4>1998-2016, UAH</h4></div>
+    <svg width="400" height="250" id="bar2"></svg>
   </div>
 </div>
 
-<div class="statHeader1" id="header2" style="clear: both;"><h4>Military budget to GPD in 1998-2016, %</h4></div>
-<div id="chart2"><svg width="700" height="400" id="bar3"></svg></div>
+<div class="statHeader1" id="header2" style="clear: both;"><h2>Military budget to GPD in 1998-2016, %</h2></div>
+<div id="chart2"><svg width="800" height="400" id="bar3"></svg></div>
 
 <div id="control">
-  <div id="leftBtn">
+  <div id="leftBtn" style="float: left;">
       <button class="button2" onclick="onStatsBack()"><span>Back</span></button>
   </div>
-  <div id="sliderDiv"></div>
-  <div id="rightBtn">
+  <div id="sliderDiv" style="float: left;"></div>
+  <div id="rightBtn" style="float: right;">
       <button class="button3" onclick="onStatsNext()"><span>Next</span></button>
   </div>
 </div>
@@ -31,17 +29,24 @@
 <script>
 /* global $, fadeInDelay*/
     $(function() {
-        $('#header2, #header1, #chart1, #chart2, #control').hide();
+        $('#header1, #description, #chart1, #header2, #chart2, #control').hide();
         
         $(function() { $('#header1').fadeIn(fadeInDelay,
+            function() { $('#description').fadeIn(fadeInDelay,
                 function() { $('#chart1').fadeIn(fadeInDelay,
                     function() { $('#header2').fadeIn(fadeInDelay,
                         function() { $('#chart2').fadeIn(fadeInDelay,
                             function() { $('#control').fadeIn(fadeInDelay);}
+                            );}
                         );}
                     );}
                 );}
             );}
         );
+        
     });
 </script>
+
+<script src="d3.v4.min.js"></script>
+<script src="d3-tip.js"></script>
+<script src="d3-MyBars.js"></script>
